@@ -1,0 +1,91 @@
+﻿@model BankAccounts.Models.IndexViewModel;
+
+@{
+ViewData["Title"] = "Home Page";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<div class="text-center" id="header">
+    <h1 class="display-4">BankAccounts</h1>
+    <!-- <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p> -->
+    <hr>
+</div>
+
+
+<div class="register col-5" style="display: inline-block;">
+    <h1 style="text-align: center;">Register</h1>
+    <form asp-action="Register" asp-controller="Home" method="post">
+        <div class="form-group">
+            <label for="fname">First Name:</label>
+            <span asp-validation-for="newRegister.firstName" style="color:red;"></span><br>
+            <input type="text" asp-for="newRegister.firstName" class="form-control" placeholder="Enter your first name">
+        </div>
+        <div class="form-group">
+            <label for="lname">Last Name:</label>
+            <span asp-validation-for="newRegister.lastName" style="color:red;"></span><br>
+            <input type="text" asp-for="newRegister.lastName" class="form-control" placeholder="Enter your last Name">
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <span asp-validation-for="newRegister.email" style="color:red;"></span><br>
+            <input type="text" asp-for="newRegister.email" class="form-control" placeholder="Enter a valid email">
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <span asp-validation-for="newRegister.password" style="color:red;"></span><br>
+            <input type="text" asp-for="newRegister.password" class="form-control" placeholder="Enter a Valid password">
+        </div>
+        <div class="form-group">
+            <label for="cpassword">Confirm Password:</label>
+            <span asp-validation-for="newRegister.confirmPassword" style="color:red;"></span><br>
+            <input type="text" asp-for="newRegister.confirmPassword" class="form-control"
+                placeholder="Confirm Password">
+        </div>
+        <div class="button">
+            <button class="btn btn-primary">Sign Up</button>
+        </div>
+    </form>
+</div>
+
+<div class="vl" style="border-left: 6px solid green; height: 500px; display: inline-block"></div>
+
+<div class="login col-4" style="display: inline-block; vertical-align: top;">
+    <h1 style="text-align: center;">Sign In</h1>
+    <form asp-action="Login" asp-controller="Home" method="post">
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="text" asp-for="newRegister.email" class="form-control" placeholder="Enter a valid email">
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="text" asp-for="newRegister.password" class="form-control" placeholder="Enter a Valid password">
+        </div>
+        <button type="button" class="btn btn-success">Sign In</button>
+    </form>
+</div>
+
+
+
+<!-- <div class="register">
+    <h1>Register!</h1>
+    <form asp-action="Register" asp-controller="Home" method="post">
+        <label for="">First Name:</label>
+
+        <input type="text" asp-for="newRegister.firstName" /><br>
+        <label for="">Last Name:</label>
+
+        <input type="text" asp-for="newRegister.lastName" /><br>
+        <label for="">Email:</label>
+
+        <input type="text" asp-for="newRegister.email" /><br>
+        <label for="">Password</label>
+
+        <input type="text" asp-for="newRegister.password" /><br>
+        <label for="">Confirm Password</label>
+
+        <input type="text" asp-for="newRegister.confirmPassword" /><br>
+        <button type="button" class="btn btn-primary">Sign Up</button>
+    </form>
+</div> -->
